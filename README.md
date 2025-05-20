@@ -30,8 +30,7 @@ sensor:
 
 ## Parametric Box
 
-A parametric box was designed to house the PCB and the D1 Mini microcontroller. The box is designed to be 3D printed and has cutouts for the thermocouple and the D1 Mini microcontroller.
-The box is designed to be easy to assemble and disassemble, allowing for easy access to the components inside.
+Thank you to [@pbtec_14016](https://www.printables.com/@pbtec_14016) for the original design of the box. The original design was modified to fit the PCB and the D1 Mini microcontroller. The box is designed to be 3D printed and has cutouts for the thermocouple and the D1 Mini microcontroller.
 
 ![alt text](bbq_box.png)
 
