@@ -198,13 +198,8 @@ module BodyCut () // Add here your body cuts
 {
     // Sample side holes. Copy the line if more than one hole is needed. Works only on flat sides and not on rounded. Customize the size and the position
     // --> Parameters: diameter, vertical high, horizontal offset
-<<<<<<< HEAD
         //Hole1X=[10,20,20]; translate([Size.x/2-WallThick-0.02,Hole1X[2],Hole1X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole1X[0],center = false);
         Hole2X=[10,20,-15]; translate([Size.x/2-WallThick-0.02,Hole2X[2],Hole2X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole2X[0],center = false);
-=======
-        Hole1X=[12.3,20,20]; translate([Size.x/2-WallThick-0.02,Hole1X[2],Hole1X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole1X[0],center = false);
-        Hole2X=[12.3,20,-20]; translate([Size.x/2-WallThick-0.02,Hole2X[2],Hole1X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole2X[0],center = false);
->>>>>>> 07e578570627633dbccbb0c5a003d357b59e91e9
         //Hole2X=[20,30,-20]; translate([-Size.x/2-0.02,Hole2X[2],Hole2X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole2X[0],center = false);
         //Hole1Y=[40,25,-25]; translate([Hole1Y[2],-Size.y/2-0.02,Hole1Y[1]]) rotate([0,90,90]) cylinder(h=WallThick+0.04,d=Hole1Y[0],center = false);
         //Hole2Y=[ 5,25,-25]; translate([Hole2Y[2],Size.y/2-WallThick-0.02,Hole2Y[1]]) rotate([0,90,90]) cylinder(h=WallThick+0.04,d=Hole2Y[0],center = false);
