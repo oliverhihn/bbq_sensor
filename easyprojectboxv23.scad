@@ -44,13 +44,13 @@ Dist                      =             10 ;
 Position                  =          false ;
 /* [Box settings] */
 // Size for the box x,y,z
-Size                      =   [85,85,30] ;
+Size                      =   [86,86,30] ;
 // Corner rounding --> !!! Rounding must be same or bigger than WallThick, and not bigger than the half of the smaler side -1. Otherwise there are some rendering issues
 Rounding                  =            5.0 ; //[1:1:100]
 // Wall and bottom thickness
-WallThick                 =            3.0 ; //[1:0.1:10]
+WallThick                 =            2.2 ; //[1:0.1:10]
 // Lid thickness (only lid)
-LidThick                  =            3.0 ; //[1:0.1:10]
+LidThick                  =            1.8 ; //[1:0.1:10]
 // Gap between base and lid to make the lid a bit smaler to fit better (depends on your 3d printer quality) default 0.2mm
 Gap                       =            0.2 ; //[0.01:0.01:1]
 // Hole diameter in lid for Screw
@@ -60,9 +60,9 @@ HoleDiaLid                =            3.2 ; //[1:0.1:10]
 // Hole diameter for thread or hot melt copper nut (thread 2.2 for 2.9mm / 2.8 for 3.5mm / 3.2 for 3.9mm Screw)
 HoleDiaThread             =            3.2 ; //[1:0.1:10]
 // Screw or hot melt nut Hole deepness (deepness in the Body/Cylinder). If too big, through hole possible
-HoleDeepness              =           12.0 ; //[1:0.1:200]
+HoleDeepness              =           10.0 ; //[1:0.1:200]
 // Cylinder dia for the Screw
-ScrewCylinderDia          =           12.0 ; //[4:0.1:20]
+ScrewCylinderDia          =           10.0 ; //[4:0.1:20]
 // Add additional holes on x side
 AddXScrew                 =           false ;
 // Add additional holes on y side
@@ -199,15 +199,18 @@ module BodyCut () // Add here your body cuts
     // Sample side holes. Copy the line if more than one hole is needed. Works only on flat sides and not on rounded. Customize the size and the position
     // --> Parameters: diameter, vertical high, horizontal offset
         //Hole1X=[10,20,20]; translate([Size.x/2-WallThick-0.02,Hole1X[2],Hole1X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole1X[0],center = false);
-        Hole2X=[10,12,-15]; translate([Size.x/2-WallThick-0.02,Hole2X[2],Hole2X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole2X[0],center = false);
+        // Hole2X=[10,12,-15]; translate([Size.x/2-WallThick-0.02,Hole2X[2],Hole2X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole2X[0],center = false);
         //Hole2X=[20,30,-20]; translate([-Size.x/2-0.02,Hole2X[2],Hole2X[1]]) rotate([0,90,0]) cylinder(h=WallThick+0.04,d=Hole2X[0],center = false);
         //Hole1Y=[40,25,-25]; translate([Hole1Y[2],-Size.y/2-0.02,Hole1Y[1]]) rotate([0,90,90]) cylinder(h=WallThick+0.04,d=Hole1Y[0],center = false);
         //Hole2Y=[ 5,25,-25]; translate([Hole2Y[2],Size.y/2-WallThick-0.02,Hole2Y[1]]) rotate([0,90,90]) cylinder(h=WallThick+0.04,d=Hole2Y[0],center = false);
 
     // Sample side cube cuts. Copy the line if more than one window is need. Works only on flat sides and not on rounded. Customize the size and the position
     // --> Parameters: wide, hight, vertical high, horizontal offset
-        Window1X=[13.25,5.35,10,15]; translate([-WallThick/2+Size.x/2,Window1X[3],Window1X[2]]) cube([WallThick+0.04,Window1X[0],Window1X[1]],center=true);
-        //Window2X=[35,10,10,10]; translate([WallThick/2-Size.x/2,Window2X[3],Window2X[2]]) cube([WallThick+0.04,Window2X[0],Window2X[1]],center=true);
+    // THIS WAS TOO SMALL: Window1X=[13.25, 5.35, 10, 15];
+        Window1X=[13.75, 5.85, 20, 15]; translate([-WallThick/2+Size.x/2,Window1X[3],Window1X[2]]) cube([WallThick+0.04,Window1X[0],Window1X[1]],center=true);
+
+        Window2X=[18.5, 8.75, 20, -18]; translate([-WallThick/2+Size.x/2,Window2X[3],Window2X[2]]) cube([WallThick+0.04,Window2X[0],Window2X[1]],center=true);
+    
         //Window1Y=[35,40,25,30]; translate([Window1Y[3],-WallThick/2+Size.y/2,Window1Y[2]]) cube([Window1Y[0],WallThick+0.04,Window1Y[1]],center=true);
         //Window2Y=[35,10,28,25]; translate([Window2Y[3],WallThick/2-Size.y/2,Window2Y[2]]) cube([Window2Y[0],WallThick+0.04,Window2Y[1]],center=true);
 
